@@ -62,7 +62,7 @@ func (set *Set) Clear() {
 }
 
 // Values returns all Items in the set.
-func (set *Set) Values() []interface{} {
+func (set *Set) ToSlice() []interface{} {
 	values := make([]interface{}, set.Size())
 	count := 0
 	for item := range set.Items {
@@ -81,4 +81,39 @@ func (set *Set) String() string {
 	}
 	str += strings.Join(Items, ", ")
 	return str
+}
+
+//两个集合的合集
+func Union(m, n *Set) *Set {
+	resultSet := &Set{Items: make(map[interface{}]struct{}, m.Size()+n.Size())}
+	for item := range m.Items {
+		resultSet.Items[item] = itemExists
+	}
+	for item := range n.Items {
+		resultSet.Items[item] = itemExists
+	}
+	return resultSet
+}
+
+//两集合的交集
+func InnerJoin(m, n *Set) *Set {
+	if m.Size() > n.Size() {
+		//最大也只能是n
+		resultSet := &Set{Items: make(map[interface{}]struct{}, n.Size())}
+		for item := range n.Items {
+			if _, contains := m.Items[item]; contains {
+				resultSet.Items[item] = itemExists
+			}
+		}
+		return resultSet
+	} else {
+		//最大也只能是m
+		resultSet := &Set{Items: make(map[interface{}]struct{}, n.Size())}
+		for item := range m.Items {
+			if _, contains := n.Items[item]; contains {
+				resultSet.Items[item] = itemExists
+			}
+		}
+		return resultSet
+	}
 }
