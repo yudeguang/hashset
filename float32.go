@@ -11,7 +11,7 @@ type SetFloat32 struct {
 }
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
-func Newfloat32(values ...float32) *SetFloat32 {
+func NewFloat32(values ...float32) *SetFloat32 {
 	set := &SetFloat32{Items: make(map[float32]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)

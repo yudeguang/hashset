@@ -11,7 +11,7 @@ type SetFloat64 struct {
 }
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
-func Newfloat64(values ...float64) *SetFloat64 {
+func NewFloat64(values ...float64) *SetFloat64 {
 	set := &SetFloat64{Items: make(map[float64]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)

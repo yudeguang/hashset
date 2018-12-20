@@ -11,7 +11,7 @@ type SetInt8 struct {
 }
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
-func Newint8(values ...int8) *SetInt8 {
+func NewInt8(values ...int8) *SetInt8 {
 	set := &SetInt8{Items: make(map[int8]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)

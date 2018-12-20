@@ -11,7 +11,7 @@ type SetComplex128 struct {
 }
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
-func Newcomplex128(values ...complex128) *SetComplex128 {
+func NewComplex128(values ...complex128) *SetComplex128 {
 	set := &SetComplex128{Items: make(map[complex128]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
