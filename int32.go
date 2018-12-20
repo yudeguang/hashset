@@ -12,7 +12,7 @@ type SetInt32 struct {
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func Newint32(values ...int32) *SetInt32 {
-	set := &SetInt32{Items: make(map[int32]struct{})}
+	set := &SetInt32{Items: make(map[int32]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

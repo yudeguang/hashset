@@ -12,7 +12,7 @@ type SetString struct {
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func NewString(values ...string) *SetString {
-	set := &SetString{Items: make(map[string]struct{})}
+	set := &SetString{Items: make(map[string]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

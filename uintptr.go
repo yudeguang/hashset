@@ -12,7 +12,7 @@ type SetUintptr struct {
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func NewUintptr(values ...uintptr) *SetUintptr {
-	set := &SetUintptr{Items: make(map[uintptr]struct{})}
+	set := &SetUintptr{Items: make(map[uintptr]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

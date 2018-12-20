@@ -14,7 +14,7 @@ var itemExists = struct{}{}
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func NewInt(values ...int) *SetInt {
-	set := &SetInt{Items: make(map[int]struct{})}
+	set := &SetInt{Items: make(map[int]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

@@ -12,7 +12,7 @@ type SetUint8 struct {
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func NewUint8(values ...uint8) *SetUint8 {
-	set := &SetUint8{Items: make(map[uint8]struct{})}
+	set := &SetUint8{Items: make(map[uint8]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

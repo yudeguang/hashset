@@ -12,7 +12,7 @@ type SetUint64 struct {
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func NewUint64(values ...uint64) *SetUint64 {
-	set := &SetUint64{Items: make(map[uint64]struct{})}
+	set := &SetUint64{Items: make(map[uint64]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

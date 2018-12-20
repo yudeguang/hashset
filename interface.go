@@ -13,7 +13,7 @@ type Set struct {
 
 // New instantiates a new empty set and adds the passed values, if any, to the set
 func New(values ...interface{}) *Set {
-	set := &Set{Items: make(map[interface{}]struct{})}
+	set := &Set{Items: make(map[interface{}]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

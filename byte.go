@@ -12,7 +12,7 @@ type SetByte struct {
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func Newbyte(values ...byte) *SetByte {
-	set := &SetByte{Items: make(map[byte]struct{})}
+	set := &SetByte{Items: make(map[byte]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}

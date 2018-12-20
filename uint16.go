@@ -12,7 +12,7 @@ type SetUint16 struct {
 
 // 初始化Set，支持在初始化的时候插入任意数量的元素
 func NewUint16(values ...uint16) *SetUint16 {
-	set := &SetUint16{Items: make(map[uint16]struct{})}
+	set := &SetUint16{Items: make(map[uint16]struct{}, len(values))}
 	if len(values) > 0 {
 		set.Add(values...)
 	}
