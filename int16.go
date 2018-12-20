@@ -81,7 +81,7 @@ func (set *SetInt16) String() string {
 }
 
 //两个集合的合集
-func Unionint16(m, n *SetInt16) *SetInt16 {
+func UnionInt16(m, n *SetInt16) *SetInt16 {
 	resultSet := &SetInt16{Items: make(map[int16]struct{}, m.Size()+n.Size())}
 	for item := range m.Items {
 		resultSet.Items[item] = itemExists
@@ -93,7 +93,7 @@ func Unionint16(m, n *SetInt16) *SetInt16 {
 }
 
 //两集合的交集
-func InnerJoinint16(m, n *SetInt16) *SetInt16 {
+func InnerJoinInt16(m, n *SetInt16) *SetInt16 {
 	if m.Size() > n.Size() {
 		//最大也只能是n
 		resultSet := &SetInt16{Items: make(map[int16]struct{}, n.Size())}

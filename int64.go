@@ -81,7 +81,7 @@ func (set *SetInt64) String() string {
 }
 
 //两个集合的合集
-func Unionint64(m, n *SetInt64) *SetInt64 {
+func UnionInt64(m, n *SetInt64) *SetInt64 {
 	resultSet := &SetInt64{Items: make(map[int64]struct{}, m.Size()+n.Size())}
 	for item := range m.Items {
 		resultSet.Items[item] = itemExists
@@ -93,7 +93,7 @@ func Unionint64(m, n *SetInt64) *SetInt64 {
 }
 
 //两集合的交集
-func InnerJoinint64(m, n *SetInt64) *SetInt64 {
+func InnerJoinInt64(m, n *SetInt64) *SetInt64 {
 	if m.Size() > n.Size() {
 		//最大也只能是n
 		resultSet := &SetInt64{Items: make(map[int64]struct{}, n.Size())}

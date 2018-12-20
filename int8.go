@@ -81,7 +81,7 @@ func (set *SetInt8) String() string {
 }
 
 //两个集合的合集
-func Unionint8(m, n *SetInt8) *SetInt8 {
+func UnionInt8(m, n *SetInt8) *SetInt8 {
 	resultSet := &SetInt8{Items: make(map[int8]struct{}, m.Size()+n.Size())}
 	for item := range m.Items {
 		resultSet.Items[item] = itemExists
@@ -93,7 +93,7 @@ func Unionint8(m, n *SetInt8) *SetInt8 {
 }
 
 //两集合的交集
-func InnerJoinint8(m, n *SetInt8) *SetInt8 {
+func InnerJoinInt8(m, n *SetInt8) *SetInt8 {
 	if m.Size() > n.Size() {
 		//最大也只能是n
 		resultSet := &SetInt8{Items: make(map[int8]struct{}, n.Size())}

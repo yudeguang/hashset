@@ -81,7 +81,7 @@ func (set *SetInt32) String() string {
 }
 
 //两个集合的合集
-func Unionint32(m, n *SetInt32) *SetInt32 {
+func UnionInt32(m, n *SetInt32) *SetInt32 {
 	resultSet := &SetInt32{Items: make(map[int32]struct{}, m.Size()+n.Size())}
 	for item := range m.Items {
 		resultSet.Items[item] = itemExists
@@ -93,7 +93,7 @@ func Unionint32(m, n *SetInt32) *SetInt32 {
 }
 
 //两集合的交集
-func InnerJoinint32(m, n *SetInt32) *SetInt32 {
+func InnerJoinInt32(m, n *SetInt32) *SetInt32 {
 	if m.Size() > n.Size() {
 		//最大也只能是n
 		resultSet := &SetInt32{Items: make(map[int32]struct{}, n.Size())}

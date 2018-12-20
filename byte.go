@@ -81,7 +81,7 @@ func (set *SetByte) String() string {
 }
 
 //两个集合的合集
-func Unionbyte(m, n *SetByte) *SetByte {
+func UnionByte(m, n *SetByte) *SetByte {
 	resultSet := &SetByte{Items: make(map[byte]struct{}, m.Size()+n.Size())}
 	for item := range m.Items {
 		resultSet.Items[item] = itemExists
@@ -93,7 +93,7 @@ func Unionbyte(m, n *SetByte) *SetByte {
 }
 
 //两集合的交集
-func InnerJoinbyte(m, n *SetByte) *SetByte {
+func InnerJoinByte(m, n *SetByte) *SetByte {
 	if m.Size() > n.Size() {
 		//最大也只能是n
 		resultSet := &SetByte{Items: make(map[byte]struct{}, n.Size())}

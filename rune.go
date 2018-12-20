@@ -81,7 +81,7 @@ func (set *SetRune) String() string {
 }
 
 //两个集合的合集
-func Unionrune(m, n *SetRune) *SetRune {
+func UnionRune(m, n *SetRune) *SetRune {
 	resultSet := &SetRune{Items: make(map[rune]struct{}, m.Size()+n.Size())}
 	for item := range m.Items {
 		resultSet.Items[item] = itemExists
@@ -93,7 +93,7 @@ func Unionrune(m, n *SetRune) *SetRune {
 }
 
 //两集合的交集
-func InnerJoinrune(m, n *SetRune) *SetRune {
+func InnerJoinRune(m, n *SetRune) *SetRune {
 	if m.Size() > n.Size() {
 		//最大也只能是n
 		resultSet := &SetRune{Items: make(map[rune]struct{}, n.Size())}

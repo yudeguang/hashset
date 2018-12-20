@@ -81,7 +81,7 @@ func (set *SetFloat64) String() string {
 }
 
 //两个集合的合集
-func Unionfloat64(m, n *SetFloat64) *SetFloat64 {
+func UnionFloat64(m, n *SetFloat64) *SetFloat64 {
 	resultSet := &SetFloat64{Items: make(map[float64]struct{}, m.Size()+n.Size())}
 	for item := range m.Items {
 		resultSet.Items[item] = itemExists
@@ -93,7 +93,7 @@ func Unionfloat64(m, n *SetFloat64) *SetFloat64 {
 }
 
 //两集合的交集
-func InnerJoinfloat64(m, n *SetFloat64) *SetFloat64 {
+func InnerJoinFloat64(m, n *SetFloat64) *SetFloat64 {
 	if m.Size() > n.Size() {
 		//最大也只能是n
 		resultSet := &SetFloat64{Items: make(map[float64]struct{}, n.Size())}
