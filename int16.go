@@ -1,3 +1,8 @@
+// Copyright 2020 hashset Author(https://github.com/yudeguang/hashset). All Rights Reserved.
+//
+// This Source Code Form is subject to the terms of the MIT License.
+// If a copy of the MIT was not distributed with this file,
+// You can obtain one at https://github.com/yudeguang/hashset.
 package hashset
 
 import (
@@ -5,7 +10,7 @@ import (
 	"strings"
 )
 
-//int16类型,内部导出，方便直接操作
+//int16类型
 type SetInt16 struct {
 	Items map[int16]struct{}
 }
